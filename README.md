@@ -1,4 +1,4 @@
-# Japanese-Web-Game 
+# Japanese-Web-Game
 ### Purpose
 Make learning Japanese more fun :jp: :jp: :jp:
 
@@ -6,6 +6,7 @@ Make learning Japanese more fun :jp: :jp: :jp:
 ### How to play ?
 - Go to this website https://jpcg.neocities.org/
 - Just click on card to flip and find the equivalent pairs
+- Vietnamese version available by clicking the button at the page end to fill cards with Vietnamese
 ### Word pairs
 English word | Japanese word
 ------------ | -------------

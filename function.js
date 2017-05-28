@@ -88,4 +88,5 @@ function changeToVietnamese() {
     cards[i].removeChild(cards[i].childNodes[1])
   }
   cardFilling()
+  alert("Chuyển đổi thành công")
 }
