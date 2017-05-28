@@ -2,17 +2,18 @@ body {
   font-size: 1em;
   background-color: #eee !important;
 }
+.container {
+  text-align: center;
+  max-width: 50rem;
+}
+.container h4, .container h2 {
+  font-family: "Nico Moji", cursive;
+}
 .row{
   margin-top: 2rem;
 }
 .col-xs-4 {
   height: 13rem;
-}
-.container {
-  text-align: center;
-}
-.container h4, .container h2 {
-  font-family: "Nico Moji", cursive;
 }
 .card {
   width: 100%;
