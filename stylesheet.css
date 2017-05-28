@@ -22,6 +22,7 @@ body {
   background-size: cover;
   border-radius: 10%;
   box-shadow: 0 0 5px;
+  border: 1px solid grey;
   text-align: center;
   vertical-align: middle;
   line-height: 12rem;
@@ -33,7 +34,7 @@ body {
   transform: rotateY(180deg);
 }
 .footer {
-  margin-top: 2rem;
+  margin-top: 3rem;
   color: grey;
 }
 #winningPage {

@@ -36,7 +36,7 @@ function cardCheck() {
     setTimeout(function(){
       closeCard(closingCards)
       document.getElementsByTagName('body')[0].style.pointerEvents = "auto"
-    }, 1250)
+    }, 1750)
   }
   openedCards = []; // cleaned array after checked
 }
