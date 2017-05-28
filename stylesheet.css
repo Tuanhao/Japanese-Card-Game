@@ -27,7 +27,6 @@ body {
   text-align: center;
   vertical-align: middle;
   line-height: 12rem;
-  font-family: "Nico Moji", cursive;
   font-size: 2rem;
   color: transparent;
 }
@@ -45,6 +44,7 @@ body {
   width: 70%;
   text-align: center;
   margin: 3rem auto;
+  max-width: 40rem;
 }
 #winningPage img {
   border-radius: 10%;

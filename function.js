@@ -17,31 +17,33 @@ function cardFilling() {
 }
 cardFilling()
 
-/** Checking for two opening cards */
+/**
+  Checking for two opening cards
+  if cards are matched then increase successValue
+  if not close cards and enable click-ability
+*/
 function cardCheck() {
   var firstCard = openedCards[0].getElementsByTagName("div")[0].innerHTML
   var secondCard = openedCards[1].getElementsByTagName("div")[0].innerHTML
   if (engArray.indexOf(firstCard) == japArray.indexOf(secondCard) && japArray.indexOf(secondCard) > -1) {
-    openedCards[0].style.pointerEvents = "none"
-    openedCards[1].style.pointerEvents = "none"
     successValue++
   }
   else if (japArray.indexOf(firstCard) == engArray.indexOf(secondCard) && engArray.indexOf(secondCard) > -1 ) {
-    openedCards[0].style.pointerEvents = "none"
-    openedCards[1].style.pointerEvents = "none"
     successValue++
-  } else { // cards dont match so close card and also disable mouse on whole website
+  } else { // cards dont match so close card and also disable mouse on whole page
     document.getElementsByTagName('body')[0].style.pointerEvents = "none"
     var closingCards = openedCards;
-    setTimeout(function(){
+    setTimeout(function(){ // after card close, enable cards and page clickable
       closeCard(closingCards)
       document.getElementsByTagName('body')[0].style.pointerEvents = "auto"
+      closingCards[0].style.pointerEvents = "auto"
+      closingCards[1].style.pointerEvents = "auto"
     }, 1750)
   }
   openedCards = []; // cleaned array after checked
 }
 
-/**  Make cards rotate when clicked */
+/**  Make cards rotate when clicked also check for win */
 function cardRotation(card) {
   flipCard(card) // call flip card for first click
   if(successValue == engArray.length) {
@@ -53,12 +55,17 @@ function cardRotation(card) {
   }
 }
 
+/**
+  By assigning animation style to flip card
+  When card is flipped, it is not clickable
+*/
 function flipCard(card) {
   card.style.animation = "flipCard 1.25s linear"
   card.style.animationFillMode = "forwards"
-  //card.style.pointerEvents = "none"
+  card.style.pointerEvents = "none"
 }
 
+/**  By assigning animation style to close card */
 function closeCard(cards) {
   cards[0].style.animation = "closeCard 1.25s linear"
   cards[1].style.animation = "closeCard 1.25s linear"
@@ -68,4 +75,17 @@ function closeCard(cards) {
 function win() {
   document.getElementsByClassName("container")[0].style.display = "none"
   document.getElementById("winningPage").style.display = "block"
+}
+
+/** Vietnamese word change */
+function changeToVietnamese() {
+  engArray = ["Táo", "Buýt", "Cô-Giáo", "Nước ép"]
+  var cards = document.getElementsByClassName('card')
+  for (var i = 0; i < 4; i++) {
+    cards[i].removeChild(cards[i].childNodes[1])
+  }
+  for (var i = 5; i < 9; i++) {
+    cards[i].removeChild(cards[i].childNodes[1])
+  }
+  cardFilling()
 }
