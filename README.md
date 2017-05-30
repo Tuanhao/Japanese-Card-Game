@@ -14,3 +14,7 @@ Apple | りんご
 Bus | バス
 Teacher | 先生
 Juice | ジュース
+Cat | ネコ
+Airplane | 飛行機
+Blue | あおい
+Plate | おさら

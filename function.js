@@ -80,7 +80,7 @@ function win() {
 
 /** Vietnamese word change */
 function changeToVietnamese() {
-  engArray = ["Táo", "Buýt", "Cô-Giáo", "Nước ép"]
+  engArray = ["Táo", "Buýt", "Cô-Giáo", "Nước ép", "Mèo", "Máy-bay", "Màu-xanh", "Đĩa"]
   clearBoard()
   cardFilling()
   alert("Chuyển đổi thành công")
