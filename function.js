@@ -1,21 +1,22 @@
-var engArray = ["Apple", "Bus", "Teacher", "Juice"]
-var japArray = ["アップル", "バス", "先生", "ジュース"]
+var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "Plate"]
+var japArray = ["りんご", "バス", "先生", "ジュース", "ネコ", "飛行機", "あおい", "おさら"]
+var cardLocation =[]
 var openedCards = []
 var successValue = 0
+
+locationGenerator()
+cardFilling()
 
 /** Filled up card with word */
 function cardFilling() {
   var cards = document.getElementsByClassName('card')
-  for (var i = 0; i < 4; i++) {
-    var engContent = document.createElement("div")
-    var japContent = document.createElement("div")
-    engContent.innerHTML = engArray[i]
-    japContent.innerHTML = japArray[i]
-    cards[i].append(engContent)
-    cards[i+5].append(japContent)
+  var wordsArray = engArray.concat(japArray)
+  for (var i = 0; i < 16; i++) {
+    var cardContent = document.createElement("div")
+    cardContent.innerHTML = wordsArray[i]
+    cards[cardLocation[i]].append(cardContent)
   }
 }
-cardFilling()
 
 /**
   Checking for two opening cards
@@ -80,13 +81,26 @@ function win() {
 /** Vietnamese word change */
 function changeToVietnamese() {
   engArray = ["Táo", "Buýt", "Cô-Giáo", "Nước ép"]
-  var cards = document.getElementsByClassName('card')
-  for (var i = 0; i < 4; i++) {
-    cards[i].removeChild(cards[i].childNodes[1])
-  }
-  for (var i = 5; i < 9; i++) {
-    cards[i].removeChild(cards[i].childNodes[1])
-  }
+  clearBoard()
   cardFilling()
   alert("Chuyển đổi thành công")
+}
+
+/** clear content of all cards */
+function clearBoard() {
+  var cards = document.getElementsByClassName('card')
+  for (var i = 0; i < 16; i++) {
+    cards[i].removeChild(cards[i].childNodes[1])
+  }
+}
+
+/** Generate an array with max 15 and min 0 (1 number can only appears once) */
+function locationGenerator() {
+  var randomNum = Math.floor(Math.random() * 16)
+  if (cardLocation.indexOf(randomNum) == -1) {
+    cardLocation.push(randomNum)
+  } else if (cardLocation.length == 16) {
+    return
+  }
+  locationGenerator()
 }

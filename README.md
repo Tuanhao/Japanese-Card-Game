@@ -10,7 +10,7 @@ Make learning Japanese more fun :jp: :jp: :jp:
 ### Word pairs
 English word | Japanese word
 ------------ | -------------
-Apple | アップル
+Apple | りんご
 Bus | バス
 Teacher | 先生
 Juice | ジュース
