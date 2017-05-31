@@ -1,16 +1,50 @@
-var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "Plate"]
-var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひこうき", "あおい", "おさら"]
-var cardLocation =[]
+var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "Plate", "honesty" , "equality" , "First place",
+"Action", "Hapiness", "Earth", "Secret", "City", "Emotion", "Crime", "Anxiety", "Nature"]
+var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひこうき", "あおい", "おさら", "しょうじき" , "びょうどう", "いちばん",
+"こうどう", "こうふく", "ちきゅう", "ひみつ", "とし", "かんじょう", "はんざい", "ふあん", "しぜん"]
+var cardLocation = []
+var wordsChoosingArray = []
+var wordsArray = []
 var openedCards = []
 var successValue = 0
 
+wordsChoosing()
 locationGenerator()
 cardFilling()
+
+/** Create an array with 8 random numbers within engArray vs japArray length */
+function wordsChoosing() {
+  var randomNum = Math.floor(Math.random() * 21)
+  if (wordsChoosingArray.length == 8) {
+    wordsArrayFilling()
+    return
+  } else if (wordsChoosingArray.indexOf(randomNum) == -1) {
+    wordsChoosingArray.push(randomNum)
+  }
+  wordsChoosing()
+}
+
+function wordsArrayFilling() {
+  for (var i = 0; i < 8; i++) {
+    wordsArray.push(engArray[wordsChoosingArray[i]])
+    wordsArray.push(japArray[wordsChoosingArray[i]])
+  }
+}
+
+/** Generate an array with max 15 and min 0 (1 number can only appears once) */
+function locationGenerator() {
+  var randomNum = Math.floor(Math.random() * 16)
+  if (cardLocation.indexOf(randomNum) == -1) {
+    cardLocation.push(randomNum)
+  } else if (cardLocation.length == 16) {
+    return
+  }
+  locationGenerator()
+}
 
 /** Filled up card with word */
 function cardFilling() {
   var cards = document.getElementsByClassName('card')
-  var wordsArray = engArray.concat(japArray)
   for (var i = 0; i < 16; i++) {
     var cardContent = document.createElement("div")
     cardContent.setAttribute("style","display: table-cell; vertical-align: middle;")
@@ -43,14 +77,14 @@ function cardCheck() {
     }, 1700)
   }
   openedCards = []; // cleaned array after checked
+  if(successValue == 8) {
+    win()
+  }
 }
 
 /**  Make cards rotate when clicked also check for win */
 function cardRotation(card) {
   flipCard(card) // call flip card for first click
-  if(successValue == engArray.length) {
-    win()
-  }
   openedCards.push(card)
   if (openedCards.length % 2 == 0) { // 2 cards are opened so do a check
     cardCheck()
@@ -75,8 +109,8 @@ function closeCard(cards) {
 
 /** win function by showing an gif */
 function win() {
-  document.getElementsByClassName("container")[0].style.display = "none"
   document.getElementById("winningPage").style.display = "block"
+  window.scrollTo(0,document.body.scrollHeight);
 }
 
 /** Vietnamese word change */
@@ -94,15 +128,4 @@ function clearBoard() {
   for (var i = 0; i < 16; i++) {
     cards[i].removeChild(cards[i].childNodes[1])
   }
-}
-
-/** Generate an array with max 15 and min 0 (1 number can only appears once) */
-function locationGenerator() {
-  var randomNum = Math.floor(Math.random() * 16)
-  if (cardLocation.indexOf(randomNum) == -1) {
-    cardLocation.push(randomNum)
-  } else if (cardLocation.length == 16) {
-    return
-  }
-  locationGenerator()
 }
