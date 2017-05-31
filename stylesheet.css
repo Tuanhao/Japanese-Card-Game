@@ -21,15 +21,21 @@ body {
   background-image: url(./card.png);
   background-position: center;
   background-size: cover;
-  border-radius: 10%;
+  border-radius: 5%;
   box-shadow: 0 0 5px;
   border: 1px solid grey;
   text-align: center;
   vertical-align: middle;
-  line-height: 12rem;
+  height: 10rem;
   font-size: 1.5rem;
   font-weight: 600;
   color: transparent;
+  display: table;
+}
+@media screen and (min-width: 480px) {
+  .card {
+    height: 12rem;
+  }
 }
 .card div {
   transform: rotateY(180deg);
@@ -52,16 +58,27 @@ body {
 }
 
 @keyframes flipCard {
-  0% {transform: rotateY(0deg); background-image: url(./card.png); color: transparent;}
-  100% { transform: rotateY(180deg); background-image: none; color: black;}
+  0% {
+    transform: rotateY(0deg);
+    background-image: url(./card.png);
+    color: transparent;
   }
-}
-
-@keyframes closeCard {
-  from {
+  100% {
     transform: rotateY(180deg);
     background-image: none;
     color: black;
   }
-  to {transform: rotateY(360deg);}
+}
+
+@keyframes closeCard {
+  0% {
+    transform: rotateY(180deg);
+    background-image: none;
+    color: black;
+  }
+  100% {
+    transform: rotateY(0deg);
+    background-image: url(./card.png);
+    color: transparent;
+  }
 }

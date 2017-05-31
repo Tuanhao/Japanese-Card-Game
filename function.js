@@ -1,5 +1,5 @@
 var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "Plate"]
-var japArray = ["りんご", "バス", "先生", "ジュース", "ネコ", "飛行機", "あおい", "おさら"]
+var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひこうき", "あおい", "おさら"]
 var cardLocation =[]
 var openedCards = []
 var successValue = 0
@@ -13,6 +13,7 @@ function cardFilling() {
   var wordsArray = engArray.concat(japArray)
   for (var i = 0; i < 16; i++) {
     var cardContent = document.createElement("div")
+    cardContent.setAttribute("style","display: table-cell; vertical-align: middle;")
     cardContent.innerHTML = wordsArray[i]
     cards[cardLocation[i]].append(cardContent)
   }
@@ -35,11 +36,11 @@ function cardCheck() {
     document.getElementsByTagName('body')[0].style.pointerEvents = "none"
     var closingCards = openedCards;
     setTimeout(function(){ // after card close, enable cards and page clickable
-      closeCard(closingCards)
       document.getElementsByTagName('body')[0].style.pointerEvents = "auto"
       closingCards[0].style.pointerEvents = "auto"
       closingCards[1].style.pointerEvents = "auto"
-    }, 1750)
+      closeCard(closingCards)
+    }, 1700)
   }
   openedCards = []; // cleaned array after checked
 }
@@ -83,6 +84,7 @@ function changeToVietnamese() {
   engArray = ["Táo", "Buýt", "Cô-Giáo", "Nước ép", "Mèo", "Máy-bay", "Màu-xanh", "Đĩa"]
   clearBoard()
   cardFilling()
+  document.getElementsByTagName('p')[0].innerHTML = "Hãy tìm những cặp từ đồng nghĩa để chiến thắng"
   alert("Chuyển đổi thành công")
 }
 
