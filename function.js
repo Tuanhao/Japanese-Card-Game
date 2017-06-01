@@ -78,7 +78,9 @@ function cardCheck() {
   }
   openedCards = []; // cleaned array after checked
   if(successValue == 8) {
-    win()
+    setTimeout(function() {
+      win()
+    }, 3000)
   }
 }
 
@@ -128,4 +130,15 @@ function clearBoard() {
   for (var i = 0; i < 16; i++) {
     cards[i].removeChild(cards[i].childNodes[1])
   }
+}
+
+/** Anime version transform */
+function changeToAnime() {
+  engArray = ["Baka ばか", "Nani なに", "Kawaii かわい", "Arigatou ありがとう", "Senpai せんぱい", "Sasuke", "Dragon Ball", "Pokemon"]
+  japArray = ["Idiot", "What", "Cute", "Thank you", "Senior/ Elder", "Naruto", "Songoku", "Pikachu"]
+  wordsArray =["Baka ばか", "Idiot", "Nani なに", "What", "Kawaii かわい", "Cute", "Arigatou ありがとう", "Thank you", "Senpai せんぱい", "Senior/ Elder",
+  "Sasuke", "Naruto", "Dragon Ball", "Songoku", "Pokemon", "Pikachu"]
+  clearBoard()
+  cardFilling()
+  alert("Welcom Otaku-san!!!")
 }
