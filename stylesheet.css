@@ -61,13 +61,11 @@ body {
   0% {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
-    background-image: url(./card.png);
     color: transparent;
   }
   100% {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
-    background-image: none;
     color: black;
   }
 }
@@ -76,13 +74,11 @@ body {
   0% {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
-    background-image: none;
     color: black;
   }
   100% {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
-    background-image: url(./card.png);
     color: transparent;
   }
 }
