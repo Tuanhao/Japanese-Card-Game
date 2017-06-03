@@ -1,11 +1,19 @@
 var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "Plate", "honesty" , "equality" , "First place",
 "Action", "Hapiness", "Earth", "Secret", "City", "Emotion", "Crime", "Anxiety", "Nature", "Soap", "Machine", "To dance", "Just right",
 "Habit", "Expirience", "Strength", "Shape", "Color", "Taste", "Meeting", "Coast/ Beach", "Price", "Novel", "Manager", "Future",
-"Usually", "Free", "Salary", "Color", "Zoo", "Grape", "Caution", "Police", "Relationship", "Research", "Sound"]
+"Usually", "Free", "Salary", "Color", "Zoo", "Grape", "Caution", "Police", "Relationship", "Research", "Sound", "General",
+"Lake", "Dream", "Airport", "Mathematic", "Education", "Baby", "Fire", "Freedom", "Forest", "Law", "Male", "Earthquake", "Population",
+"Accident", "Island", "Church", "History", "Community", "Residence", "Factory", "Hobby", "Graduation", "Cloud", "Light", "Gift",
+"Politic", "Special", "Swimming", "Lecture", "Finger", "Production", "Conversation", "Toy", "Season", "Translation", "Trade", "Leaf",
+"Traffic", "Tool", "Enrollment", "Pronunciation", "Cartoon", "Mirror", "Principal", "Citizen", "Sand", "Glove", "Diary", "String"]
 var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひこうき", "あおい", "おさら", "しょうじき" , "びょうどう", "いちばん",
 "こうどう", "こうふく", "ちきゅう", "ひみつ", "とし", "かんじょう", "はんざい", "ふあん", "しぜん", "せっけん", "きかい", "おどります", "ちょうどいい",
 "しゅうかん", "けいけん", "ちから", "かたち", "いろ", "あじ", "かい", "かいがん", "ねだん", "しょうせつ", "かんりにん", "しょうらい",
-"たいてい", "むりょう", "きゅうりょう", "いろ", "どうぶつえん", "ぶどう", "ちゅうい", "けいさつ", "かんけい", "けんきゅう", "おと"]
+"たいてい", "むりょう", "きゅうりょう", "いろ", "どうぶつえん", "ぶどう", "ちゅうい", "けいさつ", "かんけい", "けんきゅう", "おと", "ふつう",
+"みずうみ", "ゆめ", "くうこう", "すうがく", "きょういく", "あかちゃん", "ひ", "じゆう", "もり", "ほうりつ", "だんせい", "じしん", "じんこう",
+"こしょう", "しま", "きょうかい", "れきし", "しゃかい", "じゅうしょ", "こうじょう", "しゅみ", "そつぎょう", "くも", "ひかり", "おくりもの",
+"せいじ", "とくべつ", "すいえい", "こうぎ", "ゆび", "せいさん", "かいわ", "おもちゃ", "きせつ", "ほんやく", "ぼうえき", "は",
+"こうつう", "どうぐ", "にゅうがく", "はつおん", "まんが", "かがみ", "こうちょう", "しみん", "すな", "てぶくろ", "にっき", "いと"]
 var cardLocation = []
 var wordsChoosingArray = []
 var wordsArray = []
@@ -129,9 +137,13 @@ function win() {
 /** Vietnamese word change */
 function changeToVietnamese() {
   engArray = ["Táo", "Xe buýt", "Giáo viên", "Nước ép", "Mèo", "Máy bay", "Màu xanh", "Đĩa", "Thành thật" , "Công bằng" , "Hạng nhất",
-  "Hành động", "Niềm vui", "Trái Đất", "bí mật", "Thành phố", "Cảm súc", "Tội phạm", "Nỗi lo âu", "Tự nhiên", "xà phòng", "Máy móc", "Nhảy nhót", "Vừa đủ",
+  "Hành động", "Niềm vui", "Trái Đất", "bí mật", "Đô thị", "Cảm súc", "Tội phạm", "Nỗi lo âu", "Tự nhiên", "xà phòng", "Máy móc", "Nhảy nhót", "Vừa đủ",
   "Thói quen", "Kinh nghiệm", "Sức mạnh", "Hình dáng", "Màu sắc", "Mùi vị", "Cuộc họp", "Bờ biển", "Giá tiền", "Tiểu thuyết", "Quản lý", "Tương lai",
-  "Thường xuyên", "Miễn phí", "Lương bổng", "Màu sắc", "Sở thú", "Nho", "Cẩn thận", "Cảnh sát", "Mối quan hệ", "Nghiên cứu", "Âm thanh"]
+  "Thường xuyên", "Miễn phí", "Lương bổng", "Màu sắc", "Sở thú", "Nho", "Cẩn thận", "Cảnh sát", "Mối quan hệ", "Nghiên cứu", "Âm thanh", "Tầm thường",
+  "Hồ", "Mơ", "Sân bay", "Toán học", "Giáo dục", "Trẻ sơ sinh", "Lửa", "Tự do", "Rừng", "Luật", "Nam tính", "Động đất", "Dân số",
+  "Sự cố/ trục trặc", "Hòn đảo", "Nhà thờ", "Lịch sử", "Cộng đồng", "Nơi ở", "Nhà máy", "Sở thích", "Tốt nghiệp", "Mây", "Ánh sáng", "Món quà",
+  "Chính trị", "Đặc biệt", "Bơi", "Bài giảng", "Ngón tay", "Sản xuất", "Cuộc trò chuyện", "Đồ chơi", "Mùa", "Phiên dịch", "Giao dịch", "Lá",
+  "Giao thông", "Công cụ", "Sự nhâp học", "Phiên âm", "Hoạt hình", "Gương", "Hiệu trưởng", "Công dân", "Cát", "Găng tay", "Nhật Kí", "Dây thừng"]
   wordsArray = []
   clearBoard()
   wordsArrayFilling()
@@ -157,4 +169,9 @@ function changeToAnime() {
   clearBoard()
   cardFilling()
   alert("Welcom Otaku-san!!!")
+}
+
+/** Restart by reloading the page */
+function restart() {
+  window.location.reload()
 }

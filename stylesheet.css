@@ -22,12 +22,12 @@ body {
   background-position: center;
   background-size: cover;
   border-radius: 5%;
-  box-shadow: 0 0 5px;
+  box-shadow: 0 0 3px;
   border: 1px solid grey;
   text-align: center;
   vertical-align: middle;
   height: 10rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: transparent;
   display: table;
@@ -67,6 +67,7 @@ body {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     color: black;
+    background-color: white;
   }
 }
 
@@ -75,10 +76,12 @@ body {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     color: black;
+    background-color: white;
   }
   100% {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
     color: transparent;
+    background-color: none;
   }
 }
