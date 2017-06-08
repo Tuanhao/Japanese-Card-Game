@@ -1,19 +1,21 @@
 var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "Plate", "honesty" , "equality" , "First place",
 "Action", "Hapiness", "Earth", "Secret", "City", "Emotion", "Crime", "Anxiety", "Nature", "Soap", "Machine", "To dance", "Just right",
 "Habit", "Expirience", "Strength", "Shape", "Color", "Taste", "Meeting", "Coast/ Beach", "Price", "Novel", "Manager", "Future",
-"Usually", "Free", "Salary", "Color", "Zoo", "Grape", "Caution", "Police", "Relationship", "Research", "Sound", "General",
+"Usually", "Free", "Salary", "Zoo", "Grape", "Caution", "Police", "Relationship", "Research", "Sound", "General",
 "Lake", "Dream", "Airport", "Mathematic", "Education", "Baby", "Fire", "Freedom", "Forest", "Law", "Male", "Earthquake", "Population",
 "Accident", "Island", "Church", "History", "Community", "Residence", "Factory", "Hobby", "Graduation", "Cloud", "Light", "Gift",
-"Politic", "Special", "Swimming", "Lecture", "Finger", "Production", "Conversation", "Toy", "Season", "Translation", "Trade", "Leaf",
-"Traffic", "Tool", "Enrollment", "Pronunciation", "Cartoon", "Mirror", "Principal", "Citizen", "Sand", "Glove", "Diary", "String"]
+"To sell (well)", "Chew", "Pick", "Different", "Go back and forth", "Take note", "Serious", "Enthusiastic", "Easy", "Great/ Admirable",
+"Popularity", "Chewing gum", "Goods", "Novelist", "Singer", "Self", "Momoent/ Instant", "Thereupon", "Gymnasium", "To open", "To close",
+"To be crowded", "To be less crowded", "To be broken", "To break/ To split", "To attach", "To make mistake", "To drop", "Bowl", "Cup"]
 var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひこうき", "あおい", "おさら", "しょうじき" , "びょうどう", "いちばん",
-"こうどう", "こうふく", "ちきゅう", "ひみつ", "とし", "かんじょう", "はんざい", "ふあん", "しぜん", "せっけん", "きかい", "おどります", "ちょうどいい",
+"こうどう", "こうふく", "ちきゅう", "ひみつ", "まち", "かんじょう", "はんざい", "ふあん", "しぜん", "せっけん", "きかい", "おどります", "ちょうどいい",
 "しゅうかん", "けいけん", "ちから", "かたち", "いろ", "あじ", "かい", "かいがん", "ねだん", "しょうせつ", "かんりにん", "しょうらい",
-"たいてい", "むりょう", "きゅうりょう", "いろ", "どうぶつえん", "ぶどう", "ちゅうい", "けいさつ", "かんけい", "けんきゅう", "おと", "ふつう",
+"たいてい", "むりょう", "きゅうりょう", "どうぶつえん", "ぶどう", "ちゅうい", "けいさつ", "かんけい", "けんきゅう", "おと", "ふつう",
 "みずうみ", "ゆめ", "くうこう", "すうがく", "きょういく", "あかちゃん", "ひ", "じゆう", "もり", "ほうりつ", "だんせい", "じしん", "じんこう",
 "こしょう", "しま", "きょうかい", "れきし", "しゃかい", "じゅうしょ", "こうじょう", "しゅみ", "そつぎょう", "くも", "ひかり", "おくりもの",
-"せいじ", "とくべつ", "すいえい", "こうぎ", "ゆび", "せいさん", "かいわ", "おもちゃ", "きせつ", "ほんやく", "ぼうえき", "は",
-"こうつう", "どうぐ", "にゅうがく", "はつおん", "まんが", "かがみ", "こうちょう", "しみん", "すな", "てぶくろ", "にっき", "いと"]
+"うれます", "かみます", "えらびます", "ちがいます", "かよいます", "メモします", "まじめ「な」", "ねっしん", "やさしい", "えらい",
+"にんき", "ガム", "しなもの", "しょうせつか", "かしゅ", "じぶん", "しばらく", "それで", "たいいくかん", "あけます", "あきます",
+"こみます", "すきます「道が」", "こわれます", "われます", "つきます", "まちがえます", "おとします", "ちゃわん", "コップ"]
 var cardLocation = []
 var wordsChoosingArray = []
 var wordsArray = []
@@ -142,8 +144,9 @@ function changeToVietnamese() {
   "Thường xuyên", "Miễn phí", "Lương bổng", "Màu sắc", "Sở thú", "Nho", "Cẩn thận", "Cảnh sát", "Mối quan hệ", "Nghiên cứu", "Âm thanh", "Tầm thường",
   "Hồ", "Mơ", "Sân bay", "Toán học", "Giáo dục", "Trẻ sơ sinh", "Lửa", "Tự do", "Rừng", "Luật", "Nam tính", "Động đất", "Dân số",
   "Sự cố/ trục trặc", "Hòn đảo", "Nhà thờ", "Lịch sử", "Cộng đồng", "Nơi ở", "Nhà máy", "Sở thích", "Tốt nghiệp", "Mây", "Ánh sáng", "Món quà",
-  "Chính trị", "Đặc biệt", "Bơi", "Bài giảng", "Ngón tay", "Sản xuất", "Cuộc trò chuyện", "Đồ chơi", "Mùa", "Phiên dịch", "Giao dịch", "Lá",
-  "Giao thông", "Công cụ", "Sự nhâp học", "Phiên âm", "Hoạt hình", "Gương", "Hiệu trưởng", "Công dân", "Cát", "Găng tay", "Nhật Kí", "Dây thừng"]
+  "Bán chạy", "Nhai", "Chọn", "Khác", "Đi đi về về", "Ghi chép", "Nghiêm túc", "Nhiệt tình", "Dễ tính", "Vĩ đại",
+  "Sự hâm mộ", "kẹo cao su", "Hàng hoá", "Tiểu thuyết gia", "Ca sĩ", "Tự mình", "Một lúc", "Thế thì/ nên", "Nhà thì đấu thể thao", "Mở", "Đóng",
+  "Đông", "Vắng", "Hỏng", "Vỡ", "Kèm theo", "Nhầm/ sai", "Rơi", "Bát", "Cái ly"]
   wordsArray = []
   clearBoard()
   wordsArrayFilling()
@@ -175,3 +178,16 @@ function changeToAnime() {
 function restart() {
   window.location.reload()
 }
+
+fetch("http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC")
+  .then(function(resp) {
+    return resp.json()
+  })
+  .then(function(data) {
+    var randomNum = Math.floor(Math.random() * 25)
+    return data.data[randomNum].images.fixed_height.url
+  })
+  .then(function(url) {
+    var image = document.getElementsByClassName('img-responsive')[0]
+    image.src = url
+  })
