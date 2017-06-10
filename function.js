@@ -3,10 +3,11 @@ var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "
 "Habit", "Expirience", "Strength", "Shape", "Color", "Taste", "Meeting", "Coast/ Beach", "Price", "Novel", "Manager", "Future",
 "Usually", "Free", "Salary", "Zoo", "Grape", "Caution", "Police", "Relationship", "Research", "Sound", "General",
 "Lake", "Dream", "Airport", "Mathematic", "Education", "Baby", "Fire", "Freedom", "Forest", "Law", "Male", "Earthquake", "Population",
-"Accident", "Island", "Church", "History", "Community", "Residence", "Factory", "Hobby", "Graduation", "Cloud", "Light", "Gift",
-"To sell (well)", "Chew", "Pick", "Different", "Go back and forth", "Take note", "Serious", "Enthusiastic", "Easy", "Great/ Admirable",
-"Popularity", "Chewing gum", "Goods", "Novelist", "Singer", "Self", "Momoent/ Instant", "Thereupon", "Gymnasium", "To open", "To close",
-"To be crowded", "To be less crowded", "To be broken", "To break/ To split", "To attach", "To make mistake", "To drop", "Bowl", "Cup"]
+"Broken", "Island", "Church", "History", "Community", "Residence", "Factory", "Hobby", "Graduation", "Cloud", "Light", "Gift",
+"To sell (well)", "Chew", "Pick", "Differentiate", "Go back and forth", "Take note", "Serious", "Enthusiastic", "Easy", "Great/ Admirable",
+"Popular feeling", "Chewing gum", "Goods", "Novelist", "Singer", "Self", "Momoent/ Instant", "Thereupon", "Gymnasium", "To open", "To close",
+"To be crowded", "To be less crowded", "To be broken", "To break/ To split", "To attach", "To make mistake", "To drop", "Bowl", "Cup",
+"West", "Direction", "Stick on", "To hang", "Decorate", "To plant", "To put back", "To unify", "To clean up", "To put away"]
 var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひこうき", "あおい", "おさら", "しょうじき" , "びょうどう", "いちばん",
 "こうどう", "こうふく", "ちきゅう", "ひみつ", "まち", "かんじょう", "はんざい", "ふあん", "しぜん", "せっけん", "きかい", "おどります", "ちょうどいい",
 "しゅうかん", "けいけん", "ちから", "かたち", "いろ", "あじ", "かい", "かいがん", "ねだん", "しょうせつ", "かんりにん", "しょうらい",
@@ -15,7 +16,8 @@ var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひ�
 "こしょう", "しま", "きょうかい", "れきし", "しゃかい", "じゅうしょ", "こうじょう", "しゅみ", "そつぎょう", "くも", "ひかり", "おくりもの",
 "うれます", "かみます", "えらびます", "ちがいます", "かよいます", "メモします", "まじめ「な」", "ねっしん", "やさしい", "えらい",
 "にんき", "ガム", "しなもの", "しょうせつか", "かしゅ", "じぶん", "しばらく", "それで", "たいいくかん", "あけます", "あきます",
-"こみます", "すきます「道が」", "こわれます", "われます", "つきます", "まちがえます", "おとします", "ちゃわん", "コップ"]
+"こみます", "すきます「道が」", "こわれます", "われます", "つきます", "まちがえます", "おとします", "ちゃわん", "コップ",
+"にし", "ほう", "はります", "かけます", "かざります", "うえます", "もどします", "まとめます", "かたづけます", "しまいます"]
 var cardLocation = []
 var wordsChoosingArray = []
 var wordsArray = []
@@ -141,12 +143,13 @@ function changeToVietnamese() {
   engArray = ["Táo", "Xe buýt", "Giáo viên", "Nước ép", "Mèo", "Máy bay", "Màu xanh", "Đĩa", "Thành thật" , "Công bằng" , "Hạng nhất",
   "Hành động", "Niềm vui", "Trái Đất", "bí mật", "Đô thị", "Cảm súc", "Tội phạm", "Nỗi lo âu", "Tự nhiên", "xà phòng", "Máy móc", "Nhảy nhót", "Vừa đủ",
   "Thói quen", "Kinh nghiệm", "Sức mạnh", "Hình dáng", "Màu sắc", "Mùi vị", "Cuộc họp", "Bờ biển", "Giá tiền", "Tiểu thuyết", "Quản lý", "Tương lai",
-  "Thường xuyên", "Miễn phí", "Lương bổng", "Màu sắc", "Sở thú", "Nho", "Cẩn thận", "Cảnh sát", "Mối quan hệ", "Nghiên cứu", "Âm thanh", "Tầm thường",
+  "Thường xuyên", "Miễn phí", "Lương bổng", "Sở thú", "Nho", "Cẩn thận", "Cảnh sát", "Mối quan hệ", "Nghiên cứu", "Âm thanh", "Tầm thường",
   "Hồ", "Mơ", "Sân bay", "Toán học", "Giáo dục", "Trẻ sơ sinh", "Lửa", "Tự do", "Rừng", "Luật", "Nam tính", "Động đất", "Dân số",
-  "Sự cố/ trục trặc", "Hòn đảo", "Nhà thờ", "Lịch sử", "Cộng đồng", "Nơi ở", "Nhà máy", "Sở thích", "Tốt nghiệp", "Mây", "Ánh sáng", "Món quà",
-  "Bán chạy", "Nhai", "Chọn", "Khác", "Đi đi về về", "Ghi chép", "Nghiêm túc", "Nhiệt tình", "Dễ tính", "Vĩ đại",
+  "Bị hỏng", "Hòn đảo", "Nhà thờ", "Lịch sử", "Cộng đồng", "Nơi ở", "Nhà máy", "Sở thích", "Tốt nghiệp", "Mây", "Ánh sáng", "Món quà",
+  "Bán chạy", "Nhai", "Chọn", "Làm Khác", "Đi đi về về", "Ghi chép", "Nghiêm túc", "Nhiệt tình", "Dễ tính", "Vĩ đại",
   "Sự hâm mộ", "kẹo cao su", "Hàng hoá", "Tiểu thuyết gia", "Ca sĩ", "Tự mình", "Một lúc", "Thế thì/ nên", "Nhà thì đấu thể thao", "Mở", "Đóng",
-  "Đông", "Vắng", "Hỏng", "Vỡ", "Kèm theo", "Nhầm/ sai", "Rơi", "Bát", "Cái ly"]
+  "Đông", "Vắng", "Hỏng", "Vỡ", "Kèm theo", "Nhầm/ sai", "Rơi", "Bát", "Cái ly",
+  "Phía tây", "Phương hướng", "Dán lên", "Treo", "Trang trí", "Trồng (cây)", "Đưa về/ Trả về", "Nhóm lại", "Dọn dẹp", "Cất vào"]
   wordsArray = []
   clearBoard()
   wordsArrayFilling()
@@ -179,7 +182,7 @@ function restart() {
   window.location.reload()
 }
 
-fetch("http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC")
+fetch("http://api.giphy.com/v1/gifs/search?q=funny+cat&limit=50&api_key=dc6zaTOxFJmzC")
   .then(function(resp) {
     return resp.json()
   })
@@ -190,4 +193,8 @@ fetch("http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC")
   .then(function(url) {
     var image = document.getElementsByClassName('img-responsive')[0]
     image.src = url
+  })
+  .catch(function() {
+    var image = document.getElementsByClassName('img-responsive')[0]
+    image.src = './totorogif.gif'
   })
