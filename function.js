@@ -6,8 +6,12 @@ var engArray = ["Apple", "Bus", "Teacher", "Juice", "Cat", "Airplane", "Blue", "
 "Broken", "Island", "Church", "History", "Community", "Residence", "Factory", "Hobby", "Graduation", "Cloud", "Light", "Gift",
 "To sell (well)", "Chew", "Pick", "Differentiate", "Go back and forth", "Take note", "Serious", "Enthusiastic", "Easy", "Great/ Admirable",
 "Popular feeling", "Chewing gum", "Goods", "Novelist", "Singer", "Self", "Momoent/ Instant", "Thereupon", "Gymnasium", "To open", "To close",
-"To be crowded", "To be less crowded", "To be broken", "To break/ To split", "To attach", "To make mistake", "To drop", "Bowl", "Cup",
-"West", "Direction", "Stick on", "To hang", "Decorate", "To plant", "To put back", "To unify", "To clean up", "To put away"]
+"To be crowded", "Less crowded", "To be broken", "To break/ To split", "To attach", "To make mistake", "To drop", "Bowl", "Cup",
+"West", "Direction", "Stick on", "To hang", "Decorate", "To plant", "To put back", "To unify", "To clean up", "To put away",
+"To decide", "To announce", "Preperation for lesson", "Review old lesson", "Lesson", "Lecture", "Plan/ Arrangement", "Guidebook", "Calendar",
+"Poster", "Garbage bin", "Doll", "Vase", "Mirror", "Drawer", "Hallway", "Wall", "Pond", "Police box", "Surrounding", "Middle", "Corner",
+"Not yet", "Schedule", "Hope", "Round/ Circular", "Moon", "Happy", "Disagreeable/ Unpleasant", "To begin", "To continue", "To discover",
+"To take (a test)", "To attend", "To take a break", "Consecutive holidays", "A writing", "Exhibition", "Wedding", "Funeral", "Head office"]
 var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひこうき", "あおい", "おさら", "しょうじき" , "びょうどう", "いちばん",
 "こうどう", "こうふく", "ちきゅう", "ひみつ", "まち", "かんじょう", "はんざい", "ふあん", "しぜん", "せっけん", "きかい", "おどります", "ちょうどいい",
 "しゅうかん", "けいけん", "ちから", "かたち", "いろ", "あじ", "かい", "かいがん", "ねだん", "しょうせつ", "かんりにん", "しょうらい",
@@ -17,7 +21,11 @@ var japArray = ["りんご", "バス", "先生", "ジュース", "ねこ", "ひ�
 "うれます", "かみます", "えらびます", "ちがいます", "かよいます", "メモします", "まじめ「な」", "ねっしん", "やさしい", "えらい",
 "にんき", "ガム", "しなもの", "しょうせつか", "かしゅ", "じぶん", "しばらく", "それで", "たいいくかん", "あけます", "あきます",
 "こみます", "すきます「道が」", "こわれます", "われます", "つきます", "まちがえます", "おとします", "ちゃわん", "コップ",
-"にし", "ほう", "はります", "かけます", "かざります", "うえます", "もどします", "まとめます", "かたづけます", "しまいます"]
+"にし", "ほう", "はります", "かけます", "かざります", "うえます", "もどします", "まとめます", "かたづけます", "しまいます",
+"きめます", "しらせます", "よしゅうします", "ふくしゅうします", "じゅぎょう", "こうぎ", "よてい", "あんないしょ", "カレンダー",
+"ポスター", "ごみばこ", "人形", "かびん", "かがみ", "ひきだし", "ろうか", "かべ", "いけ", "こうばん", "まわり", "まんなか", "すみ",
+"まだ", "よていひょう", "きぼう", "まるい", "つき", "うれしい", "いや", "はじまります", "つづけます", "みつけます",
+"うけます", "しゅっせきします", "きゅうけいします", "れんきゅう", "さくぶん", "てんらんかい", "けっこんしき", "そうしき", "ほんしゃ"]
 var cardLocation = []
 var wordsChoosingArray = []
 var wordsArray = []
@@ -90,13 +98,13 @@ function cardCheck() {
       closingCards[0].style.pointerEvents = "auto"
       closingCards[1].style.pointerEvents = "auto"
       closeCard(closingCards)
-    }, 1700)
+    }, 1500)
   }
   openedCards = []; // cleaned array after checked
   if(successValue == 8) {
     setTimeout(function() {
       win()
-    }, 3000)
+    }, 1000)
   }
 }
 
@@ -114,10 +122,10 @@ function cardRotation(card) {
   When card is flipped, it is not clickable
 */
 function flipCard(card) {
-  card.style.animation = "flipCard 1s linear"
+  card.style.animation = "flipCard 0.6s linear"
   setTimeout(function() {
     card.style.backgroundImage = "none"
-  }, 500)
+  }, 300)
   card.style.animationFillMode = "forwards"
   card.style.pointerEvents = "none"
 }
@@ -127,9 +135,9 @@ function closeCard(cards) {
   setTimeout(function() {
     cards[0].style.backgroundImage = "url('./card.png')"
     cards[1].style.backgroundImage = "url('./card.png')"
-  }, 500)
-  cards[0].style.animation = "closeCard 1s linear"
-  cards[1].style.animation = "closeCard 1s linear"
+  }, 300)
+  cards[0].style.animation = "closeCard 0.6s linear"
+  cards[1].style.animation = "closeCard 0.6s linear"
 }
 
 /** win function by showing an gif */
@@ -141,7 +149,7 @@ function win() {
 /** Vietnamese word change */
 function changeToVietnamese() {
   engArray = ["Táo", "Xe buýt", "Giáo viên", "Nước ép", "Mèo", "Máy bay", "Màu xanh", "Đĩa", "Thành thật" , "Công bằng" , "Hạng nhất",
-  "Hành động", "Niềm vui", "Trái Đất", "bí mật", "Đô thị", "Cảm súc", "Tội phạm", "Nỗi lo âu", "Tự nhiên", "xà phòng", "Máy móc", "Nhảy nhót", "Vừa đủ",
+  "Hành động", "Niềm vui", "Trái Đất", "bí mật", "Đô thị", "Cảm xúc", "Tội phạm", "Nỗi lo âu", "Tự nhiên", "xà phòng", "Máy móc", "Nhảy nhót", "Vừa đủ",
   "Thói quen", "Kinh nghiệm", "Sức mạnh", "Hình dáng", "Màu sắc", "Mùi vị", "Cuộc họp", "Bờ biển", "Giá tiền", "Tiểu thuyết", "Quản lý", "Tương lai",
   "Thường xuyên", "Miễn phí", "Lương bổng", "Sở thú", "Nho", "Cẩn thận", "Cảnh sát", "Mối quan hệ", "Nghiên cứu", "Âm thanh", "Tầm thường",
   "Hồ", "Mơ", "Sân bay", "Toán học", "Giáo dục", "Trẻ sơ sinh", "Lửa", "Tự do", "Rừng", "Luật", "Nam tính", "Động đất", "Dân số",
@@ -149,13 +157,18 @@ function changeToVietnamese() {
   "Bán chạy", "Nhai", "Chọn", "Làm Khác", "Đi đi về về", "Ghi chép", "Nghiêm túc", "Nhiệt tình", "Dễ tính", "Vĩ đại",
   "Sự hâm mộ", "kẹo cao su", "Hàng hoá", "Tiểu thuyết gia", "Ca sĩ", "Tự mình", "Một lúc", "Thế thì/ nên", "Nhà thì đấu thể thao", "Mở", "Đóng",
   "Đông", "Vắng", "Hỏng", "Vỡ", "Kèm theo", "Nhầm/ sai", "Rơi", "Bát", "Cái ly",
-  "Phía tây", "Phương hướng", "Dán lên", "Treo", "Trang trí", "Trồng (cây)", "Đưa về/ Trả về", "Nhóm lại", "Dọn dẹp", "Cất vào"]
+  "Phía tây", "Phương hướng", "Dán lên", "Treo", "Trang trí", "Trồng (cây)", "Đưa về/ Trả về", "Nhóm lại", "Dọn dẹp", "Cất vào",
+  "Quyết định", "Thông báo", "Chuẩn bị bài mới", "Ôn bài cũ", "Buổi học", "Bài Giảng", "Kế hoạch/ dự định", "Sách hướng dẫn", "Lịch",
+  "Áp phích", "Thùng rác", "Búp bê", "Bình bông", "Gương", "Ngăng kéo", "Hành lang", "Bức TƯờng", "Ao", "Bốt cảnh sát", "Xung quanh", "Trung tâm", "Góc",
+  "Chưa", "thời khoá biểu", "Hy vọng", "Tròn", "Mặt Trăng", "Vui", "Chán/ ghét", "Bắt đầu (buổi lễ)", "Tiếp tục", "Tìm thấy",
+  "thi (kỳ thi)", "Tham dự", "Giải lao", "Ngày nghỉ liền nhau", "Bài văn", "Triễn lãm", "Lễ cưới", "Đám tang", "Trụ sở chính"]
   wordsArray = []
   clearBoard()
   wordsArrayFilling()
   cardFilling()
   document.getElementsByTagName('p')[0].innerHTML = "Hãy tìm những cặp từ đồng nghĩa để chiến thắng"
   alert("Chuyển đổi thành công")
+  window.scrollTo(0,0)
 }
 
 /** clear content of all cards */
@@ -175,6 +188,7 @@ function changeToAnime() {
   clearBoard()
   cardFilling()
   alert("Welcom Otaku-san!!!")
+  window.scrollTo(0,0)
 }
 
 /** Restart by reloading the page */
@@ -198,3 +212,5 @@ fetch("http://api.giphy.com/v1/gifs/search?q=funny+cat&limit=50&api_key=dc6zaTOx
     var image = document.getElementsByClassName('img-responsive')[0]
     image.src = './totorogif.gif'
   })
+
+//fetch("https://crossorigin.me/http://jisho.org/api/v1/search/words?keyword=%23jlpt-n5")
